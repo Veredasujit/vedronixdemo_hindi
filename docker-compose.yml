@@ -3,7 +3,7 @@ version: "3.9"
 services:
   ai-agent:
     build: .
-    container_name: pipecat-agent_demo
+    container_name: pipecat-agent_hindi_demo
     ports:
       - "8010:8010"
     env_file:
