@@ -1,0 +1,10 @@
+pipecat-ai[websocket,cartesia,google,openai,elevenlabs,silero,deepgram,runner,local-smart-turn-v3]
+
+pipecatcloud>=0.2.20
+aiofiles
+aiohttp
+python-dotenv
+loguru
+pydantic
+aiortc
+opencv-python
