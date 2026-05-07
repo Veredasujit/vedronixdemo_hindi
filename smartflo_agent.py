@@ -355,4 +355,6 @@ async def bot(runner_args: RunnerArguments, testing: Optional[bool] = False):
 
 if __name__ == "__main__":
     from pipecat.runner.run import main
+    import sys
+    sys.argv.extend(["--host", "0.0.0.0", "--port", "8010"])
     main()
