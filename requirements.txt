@@ -1,6 +1,6 @@
-pipecat-ai[websocket,cartesia,google,openai,elevenlabs,silero,deepgram,runner,local-smart-turn-v3]
+pipecat-ai[websocket,cartesia,google,openai,elevenlabs,silero,deepgram,runner,local-smart-turn-v3]==0.0.108
+pipecatcloud==0.2.20
 
-pipecatcloud>=0.2.20
 aiofiles
 aiohttp
 python-dotenv
@@ -8,3 +8,4 @@ loguru
 pydantic
 aiortc
 opencv-python
+torch
