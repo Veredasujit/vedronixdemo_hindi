@@ -125,7 +125,7 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
         if not greeted:
             greeted = True
             await task.queue_frames([
-                TTSSpeakFrame(text="नमस्ते जी, मैं रिया बोल रही हूँ, आरोग्य केयर क्लिनिक महुआ से। मैं आपकी कैसे मदद कर सकती हूँ?", append_to_context=True)
+                TTSSpeakFrame(text="नमस्ते जी, मैं रिया बोल रही हूँ, आरोग्य केयर क्लिनिक नई दिल्ली से। मैं आपकी कैसे मदद कर सकती हूँ?", append_to_context=True)
             ])
 
     @transport.event_handler("on_client_disconnected")
