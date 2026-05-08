@@ -9,7 +9,7 @@ services:
     env_file:
       - .env
     restart: unless-stopped
-    command: python smartflo_agent.py --transport twilio
+    command: python webrtc/webrtc_agent.py --transport webrtc
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8010"]
       interval: 30s
