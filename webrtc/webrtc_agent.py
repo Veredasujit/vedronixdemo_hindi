@@ -67,22 +67,35 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
             endpointing=200,
         )
     )
+   
+    from pipecat.services.cartesia.tts import CartesiaTTSService
 
-    tts = ElevenLabsTTSService(
-        api_key=os.getenv("ELEVENLABS_API_KEY", ""),
-        settings=ElevenLabsTTSService.Settings(
-            voice=os.getenv("ELEVENLABS_VOICE_ID", ""),
-            model="eleven_turbo_v2_5",
-            language=Language.HI,
-            stability=0.50,
-            similarity_boost=0.80,
-            style=0.20,
-            use_speaker_boost=True,
-            speed=0.90,
-            apply_text_normalization="on",
-        ),
-        enable_ssml_parsing=True,
+    tts = CartesiaTTSService(
+        api_key=os.getenv("CARTESIA_API_KEY"),
+        voice_id=os.getenv("CARTESIA_VOICE_ID"),   # e.g. "sonic-english"
+        model="sonic-3",             # or latest Cartesia model
+        language="hi",
+        speed=1.05,
+        emotion=["positivity:high"],
+        sample_rate=24000,
     )
+    
+
+    # tts = ElevenLabsTTSService(
+    #     api_key=os.getenv("ELEVENLABS_API_KEY", ""),
+    #     settings=ElevenLabsTTSService.Settings(
+    #         voice=os.getenv("ELEVENLABS_VOICE_ID", ""),
+    #         model="eleven_turbo_v2_5",
+    #         language=Language.HI,
+    #         stability=0.50,
+    #         similarity_boost=0.80,
+    #         style=0.20,
+    #         use_speaker_boost=True,
+    #         speed=0.90,
+    #         apply_text_normalization="on",
+    #     ),
+    #     enable_ssml_parsing=True,
+    # )
 
     llm = OpenAILLMService(
         api_key=os.getenv("OPENAI_API_KEY"),
