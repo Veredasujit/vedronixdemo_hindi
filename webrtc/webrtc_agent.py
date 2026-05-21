@@ -67,18 +67,26 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
             endpointing=200,
         )
     )
-   
-    from pipecat.services.cartesia.tts import CartesiaTTSService
+    from pipecat.services.sarvam import SarvamTTSService
 
-    tts = CartesiaTTSService(
-        api_key=os.getenv("CARTESIA_API_KEY"),
-        voice_id=os.getenv("CARTESIA_VOICE_ID"),   # e.g. "sonic-english"
-        model="sonic-3",             # or latest Cartesia model
-        language="hi",
-        speed=1.05,
-        emotion=["positivity:high"],
-        sample_rate=24000,
+    tts = SarvamTTSService(
+        api_key=os.getenv("SARVAM_API_KEY", ""),
+        speaker="priya",# Example speaker
+        language_code="hi-IN",      # Hindi
+        sample_rate=22050,
     )
+   
+    # from pipecat.services.cartesia.tts import CartesiaTTSService
+
+    # tts = CartesiaTTSService(
+    #     api_key=os.getenv("CARTESIA_API_KEY"),
+    #     voice_id=os.getenv("CARTESIA_VOICE_ID"),   # e.g. "sonic-english"
+    #     model="sonic-3",             # or latest Cartesia model
+    #     language="hi",
+    #     speed=1.05,
+    #     emotion=["positivity:high"],
+    #     sample_rate=24000,
+    # )
     
 
     # tts = ElevenLabsTTSService(
